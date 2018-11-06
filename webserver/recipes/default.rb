@@ -4,6 +4,7 @@ end
 service 'apache2' do
 	action [ :enable, :start ]
 end
-file '/var/www/html/index.html' do
-	content "hello"
+cookbook_file '/var/www/html/index.html' do
+	source 'index.html'
+	action :create
 end
